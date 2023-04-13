@@ -18,23 +18,14 @@ public class App {
             // User Choice Switch
             switch (userChoice) {
                 case 1:
-                    System.out.println("[1]. Apply for the contest."); // register a participants
-                    break;
+                System.out.println("[1]. Apply for the programming domain."); // register a participants
+                break;
                 case 2:
-                    System.out.println("[2]. Show all applicants.");
-                    break;
+                System.out.println("[2]. Apply for the database domain."); // register a participants
+                break;
                 case 3:
-                    System.out.println("[3]. Show applicant by specific domain.");
-                    break;
-                case 4:
-                    System.out.println("[4]. View complete information of the laureate of laureates.");
-                    break;
-                case 5:
-                    System.out.println("[5]. Show information of 5 first winners.");
-                    break;
-                case 6:
-                    System.out.println("[6]. Remove the last 4 applicants according there  average.");
-                    break;
+                System.out.println("[3]. Apply for the network domain."); // register a participants
+                break;
                 case 0:
                     System.out.println("\n\n** Good Bye!!!\n\n");
                     return;
@@ -53,12 +44,9 @@ public class App {
 
     private static void printMenu() {
         System.out.println("--------------------Welcome press to number for making a choice--------------------");
-        System.out.println("[1]. Apply for the contest."); // register a participants
-        System.out.println("[2]. Show all applicants.");
-        System.out.println("[3]. Show applicant by specific domain.");
-        System.out.println("[4]. View complete information of the laureate of laureates.");
-        System.out.println("[5]. Show information of 5 first winners.");
-        System.out.println("[6]. Remove the last 4 applicants according there  average.");
+        System.out.println("[1]. Apply for the programming domain."); // register a participants
+        System.out.println("[2]. Apply for the database domain."); // register a participants
+        System.out.println("[3]. Apply for the network domain."); // register a participants
         System.out.println("[0]. Exit");
     }
 }
