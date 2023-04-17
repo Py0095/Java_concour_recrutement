@@ -3,13 +3,13 @@ public class Applicant {
     private String code;
     private String name;
     private String sexe;
-    private Double noteApplicant;
+    private Double moyApplicant;
 
-    public Applicant(String code, String name, String sexe,Double noteApplicant) {
+    public Applicant(String code, String name, String sexe,Double moyApplicant) {
         this.code = code;
         this.name = name;
         this.sexe = sexe;
-        this.noteApplicant = noteApplicant;
+        this.moyApplicant = moyApplicant;
 
     }
 
@@ -38,17 +38,17 @@ public class Applicant {
         this.sexe = sexe;
     }
 
-    public Double getNoteApplicant() {
-        return noteApplicant;
+    public Double getMoyApplicant() {
+        return moyApplicant;
     }
 
-    public void setNoteApplicant(Double noteApplicant) {
-        this.noteApplicant = noteApplicant;
+    public void setMoyApplicant(Double noteApplicant) {
+        this.moyApplicant = noteApplicant;
     }
 
     @Override
     public String toString() {
-        return " Code: "+code + "\n Name: " + name + "\n Sexe: " + sexe + "\n Note: " + noteApplicant ;
+        return " Code: "+code + "\n Name: " + name + "\n Sexe: " + sexe + "\n Note: " + moyApplicant ;
     }
 
     // @Override

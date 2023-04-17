@@ -12,14 +12,18 @@ import java.util.Scanner;
 
 public class ProgrammingApplicants implements ConcourOperation<Applicant> {
 
-    // create the where i'm gonna to register all applicants
+    // Create all instance that i'll need.
     File file = new File("ProgrammingApplicants.txt");
     FileWriter fileWriter = null;
     Applicant applicant = new Applicant(null, null, null,null);
     Scanner keyboard = new Scanner(System.in);
     Random r = new Random();
+    // create the where i'm gonna to register all applicants
     static HashMap<String, Applicant> programmingArray = new HashMap<>();
 
+
+
+    // method to register applicants 
     @Override
     public Void registerApplicant() {
         // register applicant
@@ -28,8 +32,9 @@ public class ProgrammingApplicants implements ConcourOperation<Applicant> {
         applicant.setName(keyboard.nextLine());
         System.out.println("Please Enter your sexe");
         applicant.setName(keyboard.nextLine());
-        String code = "H005" + r.nextInt();
+        String code = "H005" + r.nextInt(1000);
         applicant.setCode(code);
+        applicant.setMoyApplicant(RegisterNote());
 
         try {
             fileWriter = new FileWriter(file, true);
@@ -41,6 +46,22 @@ public class ProgrammingApplicants implements ConcourOperation<Applicant> {
         throw new UnsupportedOperationException("Unimplemented method 'registerApplicant'");
     }
 
+    // this is a method to register all applicant note
+    public  Double RegisterNote() {
+        System.out.println("Put the note of the first quetion: ");
+        int note1 = keyboard.nextInt();
+
+        System.out.println("Put the note of the second quetion: ");
+        int note2 = keyboard.nextInt();
+
+        System.out.println("Put the note of the third quetion: ");
+        int note3 = keyboard.nextInt();
+
+        double moy = (note1 + note2 +note3)/3;
+        return moy; 
+    }
+
+    // method to show all aplicant
     @Override
     public HashMap<String, Applicant> showAll() {
         String applicantTable[] = null;
@@ -50,7 +71,7 @@ public class ProgrammingApplicants implements ConcourOperation<Applicant> {
             // parcourrir le fichier
             while (c2.hasNextLine()) {
                 applicantTable = c2.nextLine().split("!");
-                Applicant applicant = new Applicant(null, null, null,null);
+                // Applicant applicant = new Applicant(null, null, null,null);
                 applicant.setCode(applicantTable[0]);
                 applicant.setName(applicantTable[1]);
                 applicant.setSexe(applicantTable[2]);
@@ -63,11 +84,6 @@ public class ProgrammingApplicants implements ConcourOperation<Applicant> {
         return programmingArray;
     }
 
-    // @Override
-    // public HashMap showByDomain() {
-    //     // TODO Auto-gener   ated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'showByDomain'");
-    // }
 
     @Override
     public HashMap viewTheBest() {
