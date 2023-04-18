@@ -38,21 +38,31 @@ public class Applicant {
         this.sexe = sexe;
     }
 
-    public Double getMoyApplicant() {
+    public double getMoyApplicant() {
         return moyApplicant;
     }
 
-    public void setMoyApplicant(Double noteApplicant) {
-        this.moyApplicant = noteApplicant;
+    // public void setMoyApplicant(String applicantTable) {
+    //     this.moyApplicant = applicantTable;
+
+
+    // }
+
+    public void setMoyApplicant(double notes) {
+        moyApplicant =notes;
+        
+    }
+
+
+    // @Override
+    public String toString2() {
+        return " Code: "+code+"\n Name: "+name+"\n Sexe: "+sexe+ "\n Note: "+ moyApplicant ;
     }
 
     @Override
     public String toString() {
-        return " Code: "+code + "\n Name: " + name + "\n Sexe: " + sexe + "\n Note: " + moyApplicant ;
+    return code + "!" + name + "!" + sexe +"!" + moyApplicant +'\n';
     }
 
-    // @Override
-    // public String toStrng2() {
-    // return code + "!" + name + "!" + sexe + '\n';
-    // }
-}
+   
+} 
